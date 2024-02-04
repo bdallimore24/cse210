@@ -6,6 +6,8 @@ class Listing : Activity
     public override void Start()
     {
 
+        base.Start();
+
         Random random = new Random();
         string[] prompts = 
         {
@@ -42,8 +44,9 @@ class Listing : Activity
         string prompt = prompts[random.Next(prompts.Length)];
 
 
-        Console.WriteLine("Welcome to the Listing Activity");
-        Console.WriteLine("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.\n");
+        Console.WriteLine("Welcome to the Listing Activity!\n");
+        Console.WriteLine("This activity will help you reflect on the good things in your life.");
+        Console.WriteLine("This activity will have you list as many things as you can in a certain area.\n");
         Console.Write("How long, in seconds, would you like for your session? ");
         int timeLimit = Duration();
 
@@ -54,7 +57,7 @@ class Listing : Activity
         base.Start();
 
         Console.WriteLine("List as many responses as you can to the following prompt:\n\n");
-        Console.WriteLine($"--- {prompt} ---\n");
+        Console.WriteLine($"{prompt}\n");
         Console.Write("You may begin in: ");
         Count(5);
 

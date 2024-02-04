@@ -12,12 +12,12 @@ class Program
         while (loop)
         {
 
-            Console.Write("Menu Options:\n");
-            Console.Write("1. Start breathing activity\n");
-            Console.Write("2. Start Reflecting activity\n");
-            Console.Write("3. Start listing activity\n");
-            Console.Write("4. Quit\n");
-            Console.Write("\nSelect a choice from the menu: ");
+            Console.WriteLine("Mindfulness Activities:\n");
+            Console.WriteLine("1. Breathing Activity");
+            Console.WriteLine("2. Reflection Activity");
+            Console.WriteLine("3. Listing Activity");
+            Console.WriteLine("4. Quit\n");
+            Console.Write("Choose an activity (1-4): ");
             input = Console.ReadLine();
 
 

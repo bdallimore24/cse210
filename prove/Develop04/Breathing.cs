@@ -8,11 +8,14 @@ class Breathing : Activity
 
         base.Start();
 
-        Console.Write("Welcome to the Breathing Activity.\n");
-        Console.Write("This activity will relax you by walking you through the art of breathing in and out slowly. Please clear your mind and focus on your breathing.\n");
-        Console.WriteLine("\n How many seconds would you like this session to last? ");
+        Console.WriteLine("Welcome to the Breathing Activity.\n");
+        Console.WriteLine("This activity will relax you by walking you through the art of breathing in and out slowly.");
+        Console.WriteLine("Please clear your mind and focus on your breathing.\n");
+        Console.WriteLine("How many seconds would you like this session to last? ");
         int duration = Duration();
+
         int total = duration;
+
         while (duration > 0)
         {
             Console.Write("Breathe in...");

@@ -31,6 +31,7 @@ abstract class Activity
     protected void Spinning(int x)
 
     {
+
         string[] spinning = { "|", "/", "-", "\\" };
         int spinningIndex = 0;
         for (int i = 0; i < x*4; i++)
@@ -53,6 +54,7 @@ abstract class Activity
 
         int duration;
         while (true)
+        
         {
 
             Console.Write("Enter the desired duration in seconds: ");
