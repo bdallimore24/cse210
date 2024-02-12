@@ -36,6 +36,7 @@ public class Checklist : Goal
             return true;
 
         }
+        
         else
         {
 

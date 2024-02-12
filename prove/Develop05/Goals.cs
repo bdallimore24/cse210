@@ -32,12 +32,19 @@ public abstract class Goal
             checkBox = "X";
 
         }
-        else{
+
+        else
+        {
+
             checkBox = " ";
+
         }
+
         string details = $"[{checkBox}] {_shortName} ({_description})";
         return details;
+
     }
+    
     public abstract string GetStringRepresentation();
 
 }

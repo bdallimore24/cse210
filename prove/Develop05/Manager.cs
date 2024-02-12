@@ -15,9 +15,10 @@ public class Manager{
 
         DisplayPlayerInfo();
 
-        Console.WriteLine("");
+        
 
-        Console.WriteLine("Welcome to the Goal program! Please choose an option.");
+        Console.WriteLine("\nWelcome to the Goal program! Please choose an option.\n");
+
         System.Console.WriteLine("1. Create New Goal");
         System.Console.WriteLine("2. List Goals");
         System.Console.WriteLine("3. Save Goals");
@@ -64,7 +65,9 @@ public class Manager{
 
         }
         
-        }while(choice != "6");
+        }
+        
+        while(choice != "6");
  
     }
 
@@ -98,8 +101,10 @@ public class Manager{
 
         }
     }
+
     public void CreateGoal()
     {
+
         Console.WriteLine("Which goal would you like to make?");
         ListGoalNames();
 
@@ -122,9 +127,10 @@ public class Manager{
 
         string points = Console.ReadLine();
 
+
         if(desiredGoal == "1")
-        
         {
+
             Simple simple = new Simple(name,description,points);
             _goals.Add(simple);
 
@@ -166,11 +172,13 @@ public class Manager{
         ListGoalDetails();
         Console.WriteLine("Which goal would you like to make a record for?");
         Console.Write("> ");
+
         string goalPickerText = Console.ReadLine();
         int goalPicker = Int32.Parse(goalPickerText);
         goalPicker -= 1;
         Goal goal = _goals[goalPicker];
         goal.Record();
+
         int points = Int32.Parse(goal._points);
         _score += points;
 
@@ -179,7 +187,9 @@ public class Manager{
     public void SaveGoal()
     {
 
-        using (StreamWriter outputFile = new StreamWriter("goal.txt")){
+        using (StreamWriter outputFile = new StreamWriter("goal.txt"))
+        {
+
             outputFile.WriteLine($"{_score}");
 
             foreach(Goal goal in _goals)
@@ -210,6 +220,7 @@ public class Manager{
         }
 
             goalList.RemoveAt(0);
+
             foreach(string line in goalList)
             {
 
@@ -224,6 +235,7 @@ public class Manager{
                     string name = goalParts[0];
                     string description = goalParts[1];
                     string points = goalParts[2];
+                    
                     Simple simple = new Simple(name, description, points);
                     _goals.Add(simple);
 
@@ -243,7 +255,7 @@ public class Manager{
                 _goals.Add(eternal);
 
             }
-            
+
             else if (goalType == "Checklist")
             {
 
@@ -252,11 +264,17 @@ public class Manager{
                 string description = Parts[1];
                 string points = Parts[2];
                 string bonusText = Parts[3];
+
                 int bonus = Int32.Parse(bonusText);
+
                 string targetText = Parts[4];
+
                 int target = Int32.Parse(targetText);
+
                 string amountCompletedText = Parts[5];
+
                 int amountCompleted = Int32.Parse(amountCompletedText);
+                
                 Checklist checklist = new Checklist(name,description,points,target,bonus,amountCompleted);
                 _goals.Add(checklist);   
 
