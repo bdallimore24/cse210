@@ -1,5 +1,6 @@
 public class Run : Activity
 {
+    
     int _distance;
 
     public Run(int distance, string date, int length) : base (date, length)
