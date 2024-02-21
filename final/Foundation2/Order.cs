@@ -7,6 +7,7 @@ class Order
     private List<Product> _products;
     private Customer _customer;
 
+
     public Order(Customer customer)
     {
 
@@ -15,11 +16,13 @@ class Order
 
     }
 
+
     public Customer Customer
     {
         get => _customer; set => _customer = value;
 
     }
+
 
     public void AddProduct(Product product)
     {
@@ -28,10 +31,12 @@ class Order
 
     }
 
+
     public double CalculateTotalCost()
     {
 
         double totalCost = 0;
+
 
         foreach (Product product in _products)
         {
@@ -40,12 +45,14 @@ class Order
 
         }
 
+
         if (_customer.LiveInUSA())
         {
 
             totalCost += 5;
 
         }
+
 
         else
         {
@@ -61,6 +68,7 @@ class Order
     {
 
         string label = "Packing Label:\n";
+
         foreach (Product product in _products)
         {
 
@@ -69,6 +77,7 @@ class Order
         }
 
         return label;
+        
     }
 
     public string GetShippingLabel()

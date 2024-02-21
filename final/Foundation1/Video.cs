@@ -7,6 +7,7 @@ class Video
     public string _title;
     public string _author;
     public int _length;
+
     public List<Comment> _comment;
 
     public Video(string title, string author, int length)
@@ -19,12 +20,14 @@ class Video
 
     }
 
+
     public void AddComment(Comment comment)
     {
 
         _comment.Add(comment);
 
     }
+
 
     public int GetNumberofComments()
     {
@@ -33,10 +36,12 @@ class Video
 
     }
 
+
     public List<Comment> GetComments()
     {
 
         return _comment;
 
     }
+    
 }

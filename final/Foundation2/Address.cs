@@ -19,10 +19,11 @@ class Address
 
     }
 
-    public string StreetAddress { get => _streetAddress; set => _streetAddress = value; }
-    public string City { get => _city; set=> _city = value; }
-    public string State { get => _state; set => _state = value; }
-    public string Country { get => _country; set => _country = value; }
+    public string StreetAddress { get => _streetAddress; set => _streetAddress = value;}
+    public string City {get => _city; set=> _city = value;}
+    public string State {get => _state; set => _state = value;}
+    public string Country {get => _country; set => _country = value;}
+
 
     public bool IsInUSA()
     {
