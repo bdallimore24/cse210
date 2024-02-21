@@ -7,7 +7,7 @@ public class Swim : Activity
     }
     public override double Distance()
     {
-        return this._laps * 50.0 / 1000;
+        return this._laps * 50 / 1000 * 0.62;
     }
     public override double Speed()
     {

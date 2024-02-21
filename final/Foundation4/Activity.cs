@@ -2,6 +2,7 @@ using System;
 
 public abstract class Activity
 {
+    
     public Activity(string date, int length)
     {
 

@@ -22,14 +22,19 @@ public class Run : Activity
         return (Distance() / _length) * 60;
 
     }
-    
+
     public override double Pace()
     {
+
         return 60 / Speed();
+
     }
+
     public override void GetSummary()
     {
-        _activity = "Running";
+
+        _activity = "Run";
         base.GetSummary();
+        
     }
 }
