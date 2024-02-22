@@ -11,7 +11,6 @@ class Product
 
     public Product(string name, int productID, double price, int quantity)
     {
-
         _name = name;
         _productID = productID;
         _price = price;
