@@ -1,90 +1,59 @@
-using System;
 using System.Collections.Generic;
 
-class Order
+public class Order
 {
 
-    private List<Product> _products;
-    private Customer _customer;
+    private List<Product> products;
+    private Customer customer;
 
 
-    public Order(Customer customer)
+    public Order(List<Product> products, Customer customer)
     {
 
-        _customer = customer;
-        _products = new List<Product>();
+        this.products = products;
+        this.customer = customer;
 
     }
 
 
-    public Customer Customer
-    {
-        get => _customer; set => _customer = value;
-
-    }
-
-
-    public void AddProduct(Product product)
+    public double GetTotalCost()
     {
 
-        _products.Add(product);
+        double total = 0;
 
-    }
-
-
-    public double CalculateTotalCost()
-    {
-
-        double totalCost = 0;
-
-
-        foreach (Product product in _products)
+        foreach (Product product in products)
         {
 
-            totalCost += product.GetTotalPrice();
+            total += product.GetPrice();
 
         }
 
+        total += customer.InUSA() ? 5 : 35;
+        return total;
 
-        if (_customer.LiveInUSA())
-        {
-
-            totalCost += 5;
-
-        }
-
-
-        else
-        {
-
-            totalCost += 35;
-
-        }
-
-        return totalCost;
     }
 
     public string GetPackingLabel()
     {
+        
+        string label = "\n*******************\n\nPacking label:\n";
 
-        string label = "Packing Label:\n";
-
-        foreach (Product product in _products)
+        foreach (Product product in products)
         {
 
-            label += $"{product.Name} (ID: {product.ProductID})\n";
+            label += $"{product}\n";
 
         }
 
         return label;
-        
+
     }
+
 
     public string GetShippingLabel()
     {
-
-        string label = $"Shipping Label:\n{_customer.Name}\n{_customer.Address.GetFullAddress()}";
-        return label;
         
+        return $"*******************\n\nShipping label:\n{customer}";
+
     }
 }

@@ -1,41 +1,35 @@
-using System;
-using System.Collections.Generic;
-
-class Address
+public class Address
 {
 
-    private string _streetAddress;
-    private string _city;
-    private string _state;
-    private string _country;
+    private string street;
 
-    public Address(string streetAddres, string city, string state, string country)
+    private string city;
+
+    private string state;
+
+    private string country;
+
+    public Address(string street, string city, string state, string country)
     {
 
-        _streetAddress = streetAddres;
-        _city = city;
-        _state = state;
-        _country = country;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.country = country;
 
     }
 
-    public string StreetAddress { get => _streetAddress; set => _streetAddress = value;}
-    public string City {get => _city; set=> _city = value;}
-    public string State {get => _state; set => _state = value;}
-    public string Country {get => _country; set => _country = value;}
-
-
-    public bool IsInUSA()
+    public bool InUSA()
     {
 
-        return _country.ToLower() == "USA";
+        return country == "USA";
 
     }
 
-    public string GetFullAddress()
+    public string GetAddress()
     {
 
-        return $"{_streetAddress}\n{_city}, {_state}\n{_country}";
-        
+        return $"{street}\n{city}, {state} {country}";
+
     }
 }

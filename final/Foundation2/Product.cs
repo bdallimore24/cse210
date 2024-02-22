@@ -1,32 +1,33 @@
-using System;
-using System.Collections.Generic;
-
-class Product
+public class Product
 {
 
-    private string _name;
-    private int _productID;
-    private double _price;
-    private int _quantity;
+    private string name;
+    private int id;
+    private double price;
+    private int quantity;
 
-    public Product(string name, int productID, double price, int quantity)
+
+    public Product(string name, int id, double price, int quantity)
     {
-        _name = name;
-        _productID = productID;
-        _price = price;
-        _quantity = quantity;
+
+        this.name = name;
+        this.id = id;
+        this.price = price;
+        this.quantity = quantity;
 
     }
 
-    public string Name;
-    public int ProductID;
-    public double Price;
-    public int Quantity;
-
-    public double GetTotalPrice()
+    public double GetPrice()
     {
 
-        return _price * _quantity;
-        
+        return price * quantity;
+
+    }
+
+    public override string ToString()
+    {
+
+        return $"Product name: {name}\nProduct ID: {id}\nPrice: ${price}\nQuantity: {quantity}\n";
+
     }
 }

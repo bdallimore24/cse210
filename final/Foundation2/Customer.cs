@@ -1,29 +1,28 @@
-using System;
-using System.Collections.Generic;
-
-class Customer
+public class Customer
 {
 
-    private string _name;
-    private Address _address;
+    private string name;
+    private Address address;
 
     public Customer(string name, Address address)
     {
 
-        _name = name;
-        _address = address;
+        this.name = name;
+        this.address = address;
 
     }
 
-    public string Name { get => _name; set => _name = value; }
-    public Address Address { get => _address; set => _address = value; }
-
-
-    public bool LiveInUSA()
+    public bool InUSA()
     {
 
-        return _address.IsInUSA();
+        return address.InUSA();
 
     }
-    
+
+    public override string ToString()
+    {
+
+        return $"Name: {name}\nAddress: {address.GetAddress()}";
+
+    }
 }

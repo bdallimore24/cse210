@@ -1,43 +1,44 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
-
     static void Main(string[] args)
     {
 
-        Product product1 = new Product("Laptop", 1, 1000, 1);
-        Product product2 = new Product("Mouse", 2, 20, 2);
-        Product product3 = new Product("Keyboard", 3, 50, 1);
-        Product product4 = new Product("Monitor", 4, 200, 1);
-
-        Address address1 = new Address("123 Main St", "A-City", "MT", "USA");
-        Address address2 = new Address("867 State St", "Easton", "AB", "Canada");
-
+        Address address1 = new Address("870 W. East St", "A-City", "ND", "USA");
         Customer customer1 = new Customer("John Wick", address1);
+        List<Product> products1 = new List<Product>()
+        {
+
+            new Product("Big Hammer", 1, 40.0, 2),
+            new Product("Revenge for Dummies", 2, 20.0, 1),
+
+        };
+
+
+        Order order1 = new Order(products1, customer1);
+
+        Console.WriteLine(order1.GetPackingLabel());
+        Console.WriteLine(order1.GetShippingLabel());
+        Console.WriteLine($"Total Cost: ${order1.GetTotalCost()}");
+
+        Console.WriteLine();
+
+        Address address2 = new Address("867 State St", "Easton", "AB", "Canada");
         Customer customer2 = new Customer("Mr. Bill", address2);
+        List<Product> products2 = new List<Product>()
+        {
+            new Product("Tea Set", 3, 15.0, 3),
+            new Product("Light Sabor", 4, 30.0, 1),
+            new Product("Gum", 5, 5.0, 5)
+        };
 
-        Order order1 = new Order(customer1);
-        order1.AddProduct(product1);
-        order1.AddProduct(product2);
+        Order order2 = new Order(products2, customer2);
+        Console.WriteLine(order2.GetPackingLabel());
+        Console.WriteLine(order2.GetShippingLabel());
+        Console.WriteLine($"Total Cost: ${order2.GetTotalCost()}");
 
-        Order order2 = new Order(customer2);
-        order2.AddProduct(product3);
-        order2.AddProduct(product4);
-
-        DisplayOrderDetails(order1);
-        System.Console.WriteLine("\n-------------------------------\n");
-        DisplayOrderDetails(order2);
-
+        Console.ReadLine();
     }
-
-    static void DisplayOrderDetails(Order order)
-    {
-
-        System.Console.WriteLine(order.GetPackingLabel());
-        System.Console.WriteLine(order.GetShippingLabel());
-        System.Console.WriteLine($"Total Price: ${order.CalculateTotalCost():0.00}");
-
-    }
-    
 }
