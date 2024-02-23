@@ -29,9 +29,11 @@ class Program
         Customer customer2 = new Customer("Mr. Bill", address2);
         List<Product> products2 = new List<Product>()
         {
+
             new Product("Tea Set", 3, 15.0, 3),
             new Product("Light Sabor", 4, 30.0, 1),
             new Product("Gum", 5, 5.0, 5)
+
         };
 
         Order order2 = new Order(products2, customer2);
@@ -40,5 +42,6 @@ class Program
         Console.WriteLine($"Total Cost: ${order2.GetTotalCost()}");
 
         Console.ReadLine();
+        
     }
 }

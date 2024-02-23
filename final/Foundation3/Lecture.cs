@@ -17,6 +17,7 @@ class Lecture : Event
 
     public string Speaker
     {
+        
         get {return _speaker;}
         set {_speaker = value;}
 
